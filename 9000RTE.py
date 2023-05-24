@@ -25,7 +25,7 @@ data = {
 import time, os
 while True:
     message_response = requests.post("https://privatemessages.roblox.com/v1/messages/send", headers = headers, data = data)
-    print(message_response.json()+" "+message_response.status_code)   
+    print(f'{message_response.json()},{message_response.status_code}")   
     if message_response.status_code == 429:
         time.sleep(60)
     if message_response.status_code ==403:
